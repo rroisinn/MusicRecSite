@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block main_content %}
+<main>
+    <h1>Admin Dashboard</h1>
+    <section id='admin'>
+        <a href="{{ url_for('all_artists')}}">View all Artists</a>
+        <a href="{{ url_for('add_artist')}}">Add New Artist</a>
+        <a href="{{ url_for('view_mailinglist')}}">View the Mailing List</a>
+        <a href="{{ url_for('view_users')}}">View the User List</a>
+    </section>
+</main>
+{% endblock %}

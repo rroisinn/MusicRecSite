@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main_content %}
+<main>
+<h1>Find New Artists</h1>
+<h2>Choose artists you like already and we will recommend you new artists based on these choices:</h2>
+<p>
+    <img src="{{ url_for('static', filename='music.png') }}" alt="New music quiz"> </a>
+</p>
+<section id='quiz'>
+<a href="{{ url_for('artists',artist_id=1 )}}">Start</a>
+</section>
+</main>
+{% endblock %}
+    

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <main>
+        <h1>Add New Artists</h1>
+    <form action="" method="POST" novalidate>
+        {{form.hidden_tag()}}
+        {{form.name.label}}
+        {{form.name()}} 
+        {% for error in form.name.errors %}
+            {{error}}
+        {% endfor %}
+
+    
+        <br /> 
+        {{form.rec.label}}
+        {{form.rec()}}
+        <br /> 
+        {{form.song.label}}
+        {{form.song()}}
+        <br /> 
+        {{form.link.label}}
+        {{form.link()}}
+      
+        
+        <br/>
+        {{form.submit()}}
+        
+    </form>
+    <p>
+        {{ message }}
+    </p>
+    <table>
+        <tr>
+            <th>Rec No.</th>
+            <th>Artist</th>
+        </tr>
+        {%for artist in artists%}
+        <tr>
+            <td>{{artist["artist_id"]}}</td>
+            <td>{{artist["name"]}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    <section id='all'>
+    <a href="{{ url_for('all_artists')}}">View all Artists</a>
+    </section>
+    </main>
+{% endblock %}

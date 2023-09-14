@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <main>
+        
+    <h1>Do you like...</h1>
+    <h2>{{artist["name"]}}</h2>
+    {% if artist["name"] == "Taylor Swift"%}
+        <p>
+        <img src="{{ url_for('static', filename='taylor.png') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Phoebe Bridgers"%}
+        <p>
+        <img src="{{ url_for('static', filename='phoebe.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Olivia Rodrigo"%}
+        <p>
+        <img src="{{ url_for('static', filename='olivia.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Wallows"%}
+        <p>
+        <img src="{{ url_for('static', filename='wallows.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Ed Sheeran"%}
+        <p>
+        <img src="{{ url_for('static', filename='ED.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Ariana Grande"%}
+        <p>
+        <img src="{{ url_for('static', filename='ariana.png') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Lorde"%}
+        <p>
+        <img src="{{ url_for('static', filename='lorde.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Harry Styles"%}
+        <p>
+        <img src="{{ url_for('static', filename='harry.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    {% if artist["name"] == "Billie Eilish"%}
+        <p>
+        <img src="{{ url_for('static', filename='billie.jpeg') }}" alt="A picture of a Taylor Swift">
+        </p>
+    {% endif %}
+    <form action="" method="POST" novalidate>
+        {{form.hidden_tag()}}
+        {{form.answer()}}
+        
+        {{form.submit()}}
+        
+        
+    </form>
+</main>
+  
+
+
+    
+   
+
+    
+{% endblock %}

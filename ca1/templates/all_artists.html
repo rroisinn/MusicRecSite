@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<main>
+<h1>All Artists</h1>
+<table>
+    
+    <tr>
+        <th>Artist ID</th>
+        <th>Name</th>
+        <th>Song</th>
+        <th>Rec no.</th>
+        <th>Spotify link</th>
+    </tr>
+    {% for artist in artists %}
+        
+        <tr>
+            <td>{{ artist["artist_id"] }}</td>
+            <td>{{ artist["name"] }} </td>
+            <td>{{ artist["song"] }} </td>
+           <td>{{artist["rec"]}}</td>
+    
+            <td><a href = {{links[artist]}}>Link</a></td>
+    
+        </tr>
+        {% endfor %}
+</table>
+<section id='add'>
+<a href="{{ url_for('add_artist')}}">Add new artists</a>
+</section>
+</main>
+{% endblock %}

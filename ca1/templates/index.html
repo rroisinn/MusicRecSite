@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+<main>
+    <section id='index'>
+        <section id='music'>
+        <a href="{{ url_for('find_new_artists')}}"><img src="{{ url_for('static', filename='music3.png') }}" alt="New music quiz"> </a>
+            
+        </section>
+        
+        
+            <section id='mail'>
+            <p>Join the mailing list to get weekly emails about new music and events!</p>
+            <a href="{{ url_for('mailing_list')}}">Join</a>
+            </section>
+            <section id='playlists'>
+                <a href="https://open.spotify.com/playlist/0jF3aui7DVwkETMPazCH0y?si=365992880229412f"><img src="{{ url_for('static', filename='ireland.png') }}" alt="New Irish music playlist"> </a>
+                <a href="https://open.spotify.com/playlist/1SiX5SsSpIIZuVc7HAmavi?si=95ed8bed2a5c4d6f"><img src="{{ url_for('static', filename='girls.png') }}" alt="All girls playlist"> </a>
+                <a href="https://open.spotify.com/playlist/6PYF1KTb8vdlKe526Xhhxq?si=d633210cc71a422c"><img src="{{ url_for('static', filename='alix.png') }}" alt="Alix Page"> </a>
+            </section>
+            <section id='getrec'>
+            <p>Join the discussion and leave a recommendation!</p>
+            <a href="{{ url_for('recommendations')}}">Join</a>
+            </section>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title>Roisin's Playlist</title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+            <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+        </head>
+        <body>
+            <Header>
+                
+                <img src="{{ url_for('static', filename='logo2.png') }}" alt="A logo of a record">
+                <h1>Róisín's Playlist</h1>
+                <h2>Find New Music </h2>
+                
+            </Header>
+            
+            <nav>
+                <ul>
+                    <section id='home'>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('find_new_artists')}}">Quiz</a></li>
+                    <li><a href="{{ url_for('recommendations')}}">Recommendations</a></li>
+                    </section>
+                    <section id ='login'>
+                        {% if g.user == "admin" %}
+                        
+                        <li><a href="{{ url_for('admin') }}">Admin Dashboard</a></li>
+                        {% endif %}
+                        {% if g.user %}
+                        <li>Hello {{ g.user }}!</li>
+                        <li><a href="{{ url_for('saved_artists')}}">New Artists</a></li>
+                        
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        
+                        
+                        {% else %}
+                         <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        
+                        {% endif %}
+                    
+                
+                    </section>
+                </ul>
+            </nav>
+                
+            
+            {% block main_content %}{% endblock %}
+
+            
+            
+        <body>
+            <footer>
+                <img src="{{ url_for('static', filename='logo5.png') }}" alt="A logo of a record">
+            </footer>
+    </html>

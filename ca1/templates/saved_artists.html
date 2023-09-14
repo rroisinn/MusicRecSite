@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+    
+<main>
+<h1>Your New Artists</h1>
+
+{% if saved_artists %}
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Recommended Song</th>
+            <th>Spotify Playlist</th>
+        </tr>
+        {% for artist_id in saved_artists %}
+        
+        <tr>
+            <td>{{ names[artist_id] }}</td>
+            <td>{{ songs[artist_id] }}</td>
+            <td><a href = {{links[artist_id]}}>Link</a></td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+        <h2>Find even more new artists in these spotify playlists!</h2>
+        <section id ='playlist'>
+        {% for artist_id in saved_artists %}
+        
+            {% if ids[artist_id] == 10 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6sdyDEJy7p2ZlFHjAWCqmv?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 13 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3IVrX4f4Xh1B2EwNUOIeBM?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 16 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4fzmhGU3k9s6Wbrs3PTf26?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 19 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2wdMMO9AOUVAMtYYldy1o0?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 22 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6KMJZRSvQIC2u1Uuy4rqkB?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 25 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6PCBf4oT3Hx1Ir1UY2XQBa?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 28 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2VNhJrGYmuloAUTNsiLh7l?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 31 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7GFkaCdePj0hpZnb1LKEB5?utm_source=generator" width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+            {% if ids[artist_id] == 34 %}
+            
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6QIhUOP27VTVkScJHMPFuj?utm_source=generator"  width="25%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            
+            {% endif %}
+        {% endfor %}
+        </section>
+{% else %}
+    <section id='no_new'>
+        <p>You have no new artists :(</p>
+        
+        <p>Do the Quiz to find new artists!</p>
+        <a href="{{ url_for('find_new_artists')}}">Quiz</a>
+    </section>
+    
+{% endif %}
+</main>
+
+{% endblock %}

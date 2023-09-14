@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<main>
+<h1>Mailing List</h1>
+<table>
+    
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    {% for email in emails %}
+        <tr>
+            <td>{{ email["name"] }} </td>
+            <td>{{ email["email"] }} </td>
+            
+        </tr>
+{% endfor %}
+</table>
+</main>
+{% endblock %}

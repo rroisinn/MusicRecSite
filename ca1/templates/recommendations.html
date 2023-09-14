@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<main>
+
+<h1>Recommendations</h1>
+<h2>Join the discussion and leave a recommendation for others!</h2>
+
+<form id = 'recs' action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    {{form.name.label}}
+    {{form.name()}} 
+    
+
+
+    <br /> 
+    {{form.rec.label}}
+    {{form.rec()}}
+    
+    <p>{{message}}</p>
+    
+    <br/>
+    {{form.submit()}}
+    
+</form>
+
+
+<section id='posts'>
+{% for rec in recs%}
+    <section id='post'>
+    <p>Name: {{rec["name"]}}</p>
+    <p>{{rec["rec"]}}</p>
+    </section>
+{% endfor %}
+</section>
+</main>
+{% endblock %}

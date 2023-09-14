@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main_content %}
+<main>
+    <h1>Mailing List</h1>
+    <form action="" method="POST" novalidate>
+        {{form.hidden_tag()}}
+        {{form.name.label}}
+        {{form.name()}} 
+        <br/>
+        {{form.email.label}}
+        {{form.email()}} 
+        {% for error in form.email.errors %}
+            {{error}}
+        {% endfor %}
+
+    
+        
+        
+        <br/>
+        {{form.submit()}}
+        
+    </form>
+    <p>{{message}}</p>
+</main>
+{% endblock %}
