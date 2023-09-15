@@ -7,3 +7,4 @@ Created a music recommendation website with a combination of HTML, CSS,Flask, SQ
 <img width="1440" alt="Screenshot 2023-09-15 at 13 21 41" src="https://github.com/rroisinn/MusicRecSite/assets/92597184/cd9b2bbd-fa60-40ab-95e6-634254c732c1">
 <img width="1438" alt="Screenshot 2023-09-15 at 13 22 08" src="https://github.com/rroisinn/MusicRecSite/assets/92597184/f2dc1d16-1fe4-44bf-81d4-2f480ddaf841">
 <img width="1435" alt="Screenshot 2023-09-15 at 13 21 23" src="https://github.com/rroisinn/MusicRecSite/assets/92597184/35336034-fda6-4f23-a4ea-ccd746c6d308">
+<img width="1200" alt="Screenshot 2023-09-15 at 21 41 03" src="https://github.com/rroisinn/MusicRecSite/assets/92597184/a30db058-0378-4c4c-b36a-7c027ee39611">
